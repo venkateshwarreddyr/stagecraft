@@ -1,8 +1,15 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
+import App from "./App";
 
-test('renders home page heading', () => {
-  render(<App />);
-  const heading = screen.getByText(/AI Testing Automation Demo/i);
+test("renders the home page hero", () => {
+  render(
+    <MemoryRouter>
+      <App />
+    </MemoryRouter>
+  );
+  const heading = screen.getByRole("heading", {
+    name: /AI-Powered Test Automation/i,
+  });
   expect(heading).toBeInTheDocument();
 });

@@ -96,7 +96,7 @@ export const Login = ({ handleLogin, error }) => {
             </div>
 
             {error && (
-              <div className="login-error">
+              <div className="login-error error">
                 <HiOutlineExclamationTriangle />
                 {error}
               </div>
